@@ -1,12 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/song.dart';
-
-class Song {
-  final String title;
-  final String artist;
-
-  Song({required this.title, required this.artist});
-}
+import '../utils/constants.dart';
 
 class SongItem extends StatelessWidget {
   final Song song;
@@ -16,40 +10,30 @@ class SongItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      title: Text(song.title),
-      subtitle: Text(song.artist),
+      leading: Image.network(song.imageUrl),
+      title: Text(
+        song.title,
+        style: TextStyle(color: Colors.white),
+      ),
+      subtitle: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(
+            song.artist,
+            style: TextStyle(color: Colors.grey),
+          ),
+          Text(
+            song.album,
+            style: TextStyle(color: Colors.grey),
+          ),
+          Text(
+            song.duration,
+            style: TextStyle(color: Colors.grey),
+          ),
+        ],
+      ),
       onTap: () {
-        // Добавьте действие при нажатии на песню, например, воспроизведение
       },
     );
   }
-}
-
-class SongList extends StatelessWidget {
-  final List<Song> songs = [
-    Song(title: 'Song 1', artist: 'Artist 1'),
-    Song(title: 'Song 2', artist: 'Artist 2'),
-    Song(title: 'Song 3', artist: 'Artist 3'),
-  ];
-
-  @override
-  Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        title: Text('Songs'),
-      ),
-      body: ListView.builder(
-        itemCount: songs.length,
-        itemBuilder: (context, index) {
-          return SongItem(song: songs[index]);
-        },
-      ),
-    );
-  }
-}
-
-void main() {
-  runApp(MaterialApp(
-    home: SongList(),
-  ));
 }

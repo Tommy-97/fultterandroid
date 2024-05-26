@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'screens/home_screen.dart';
-import 'screens/playlist_list.dart';
+import 'screens/song_list.dart';
+import 'utils/constants.dart';
 
 void main() {
   runApp(KaraokeRemoteApp());
@@ -9,15 +9,13 @@ void main() {
 class KaraokeRemoteApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    // Здесь вы можете выбрать, какой экран отображать при запуске приложения
-    bool showHomeScreen = true;
-
     return MaterialApp(
-      title: 'Karaoke Remote',
+      title: Constants.appName,
       theme: ThemeData(
         primarySwatch: Colors.blue,
+        brightness: Brightness.dark,
       ),
-      home: showHomeScreen ? HomeScreen() : PlaylistList(),
+      home: SongList(),
     );
   }
 }

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../models/playlist.dart';
+import '../utils/constants.dart';
 
 class PlaylistItem extends StatelessWidget {
   final Playlist playlist;
@@ -12,8 +13,11 @@ class PlaylistItem extends StatelessWidget {
     return InkWell(
       onTap: onPressed,
       child: Container(
-        padding: EdgeInsets.all(16),
+        width: 390,
+        height: 84,
+        padding: EdgeInsets.all(Constants.defaultPadding),
         decoration: BoxDecoration(
+          gradient: Constants.primaryGradient,
           border: Border(bottom: BorderSide(color: Colors.grey.shade300)),
         ),
         child: Row(
@@ -24,7 +28,7 @@ class PlaylistItem extends StatelessWidget {
               children: [
                 Text(
                   playlist.title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold),
+                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
                 ),
                 SizedBox(height: 4),
                 Text(
@@ -33,7 +37,7 @@ class PlaylistItem extends StatelessWidget {
                 ),
               ],
             ),
-            Icon(Icons.arrow_forward_ios),
+            Icon(Icons.arrow_forward_ios, color: Colors.white),
           ],
         ),
       ),

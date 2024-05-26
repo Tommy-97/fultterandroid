@@ -14,5 +14,15 @@ class Song {
     required this.imageUrl,
     required this.audioUrl,
   });
-}
 
+  factory Song.fromJson(Map<String, dynamic> json) {
+    return Song(
+      title: json['title'],
+      artist: json['artist'],
+      album: json['album'],
+      duration: json['duration'],
+      imageUrl: json['imageUrl'],
+      audioUrl: json['audioUrl'],
+    );
+  }
+}

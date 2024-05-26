@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import '../models/playlist.dart';
 import '../widgets/playlist_item.dart';
+import '../utils/constants.dart';
 
 class PlaylistList extends StatelessWidget {
   final List<Playlist> playlists = [
@@ -13,7 +14,8 @@ class PlaylistList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Playlists'),
+        title: Text(Constants.appName),
+        backgroundColor: Constants.primaryColor,
       ),
       body: ListView.builder(
         itemCount: playlists.length,
@@ -21,7 +23,6 @@ class PlaylistList extends StatelessWidget {
           return PlaylistItem(
             playlist: playlists[index],
             onPressed: () {
-              // Действие при нажатии на плейлист
               print('Selected playlist: ${playlists[index].title}');
             },
           );
