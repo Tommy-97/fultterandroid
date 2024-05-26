@@ -1,0 +1,21 @@
+name: your_app
+description: A new Flutter project.
+publish_to: 'none' 
+version: 1.0.0+1
+environment:
+  sdk: ">=2.17.0 <3.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  http: ^0.14.0  # для выполнения HTTP-запросов
+  provider: ^6.0.0
+  shared_preferences: ^2.0.6
+  just_audio: ^0.9.6
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+flutter:
+  uses-material-design: true
