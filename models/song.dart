@@ -26,3 +26,5 @@ class Song {
     );
   }
 }
+
+class required {}

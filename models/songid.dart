@@ -1,3 +1,5 @@
+import 'song.dart';
+
 class Song {
   final int id;
   final String title;
@@ -17,5 +19,3 @@ class Song {
     );
   }
 }
-
-

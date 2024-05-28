@@ -28,7 +28,10 @@ class PlaylistItem extends StatelessWidget {
               children: [
                 Text(
                   playlist.title,
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.bold, color: Colors.white),
+                  style: TextStyle(
+                      fontSize: 18,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white),
                 ),
                 SizedBox(height: 4),
                 Text(
@@ -43,4 +46,6 @@ class PlaylistItem extends StatelessWidget {
       ),
     );
   }
+
+  SizedBox({int height}) {}
 }
